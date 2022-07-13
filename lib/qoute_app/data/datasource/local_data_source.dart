@@ -4,7 +4,6 @@ import '../model/favorite_model.dart';
 
 abstract class LocalDataSource {
   Future<void> addFavorite(FavoriteModel fav);
-  Future<void> deleteFavortite(FavoriteModel fav);
   Future<List<FavoriteModel>> fetchFav();
 }
 
@@ -22,10 +21,5 @@ class LocalDataSourceImpl implements LocalDataSource {
       return table as FavoriteModel;
     }).toList();
     return convertedTable;
-  }
-
-  @override
-  Future<void> deleteFavortite(FavoriteModel fav) async {
-    await favoriteBox.delete(fav);
   }
 }
