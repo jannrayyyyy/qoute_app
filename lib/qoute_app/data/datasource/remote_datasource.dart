@@ -17,7 +17,6 @@ class RemoteDataSourceImpl implements RemoteDataSource {
     if (response.statusCode == 200) {
       final rawData = jsonDecode(response.body);
       rawData.forEach((map) {
-        print('data: $rawData');
         qoutes.add(QouteModel.fromJson(map));
       });
       return qoutes;

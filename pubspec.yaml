@@ -44,6 +44,8 @@ dependencies:
   path_provider: ^2.0.11
   hive_flutter: ^1.1.0
   flutter_bloc: ^8.0.1
+  iconify_flutter: ^0.0.4
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:

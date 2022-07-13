@@ -6,16 +6,16 @@ import '../../../core/usecase/usecase.dart';
 import '../../../domain/entity/qoute_entity.dart';
 import '../../../domain/usecase/get_qoute.dart';
 
-part 'get_qoute_state.dart';
+part 'qoute_state.dart';
 
-class GetQouteCubit extends Cubit<GetQouteState> {
+class QouteCubit extends Cubit<QouteState> {
   final GetQoute _getQoute;
-  GetQouteCubit(this._getQoute) : super(GetQouteInitial());
+  QouteCubit(this._getQoute) : super(QouteInitial());
 
   void getQouteState() async {
     emit(QouteLoading());
     final eitherFailureOrQoute = await _getQoute.call(NoParams());
-    eitherFailureOrQoute.fold(
-        (l) => const QouteError(errorMessage), (r) => QouteLoaded(r));
+    eitherFailureOrQoute.fold((l) => emit(const QouteError(msg: errorMessage)),
+        (r) => emit(QouteLoaded(qoutes: r)));
   }
 }

@@ -8,5 +8,5 @@ class QouteEntity extends Equatable {
   @override
   // ignore: todo
   // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [];
 }

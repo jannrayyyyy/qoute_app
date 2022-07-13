@@ -37,8 +37,7 @@ class QouteRepositoryImplementation implements QouteRepository {
     try {
       final result = await local.fetchFav();
       return result;
-    } on CatchedException catch (e) {
-      print(e);
+    } on CatchedException {
       throw CatchedFailure();
     }
   }

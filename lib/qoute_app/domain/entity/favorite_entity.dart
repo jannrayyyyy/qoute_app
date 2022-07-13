@@ -2,6 +2,7 @@
 class FavoriteEntity {
   final String text;
   final String author;
+
   FavoriteEntity({
     required this.text,
     required this.author,

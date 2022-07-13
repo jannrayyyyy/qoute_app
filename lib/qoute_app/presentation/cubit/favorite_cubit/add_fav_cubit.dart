@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
@@ -10,7 +11,11 @@ part 'add_fav_state.dart';
 class FavCubit extends Cubit<FavState> {
   final FetchFavorite _fetch;
   final AddFavorite _add;
-  FavCubit(this._fetch, this._add) : super(FavInitial());
+
+  FavCubit(
+    this._fetch,
+    this._add,
+  ) : super(FavInitial());
 
   void addFavorite(FavoriteEntity fav) async {
     await _add.call(fav);
