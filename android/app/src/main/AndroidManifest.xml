@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.qoute">
    <application
-        android:label="qoute"
+        android:label="D-Qoute"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

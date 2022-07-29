@@ -1,21 +1,20 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:qoute/dependency.dart';
 import 'package:qoute/qoute_app/presentation/cubit/favorite_cubit/add_fav_cubit.dart';
 import 'package:qoute/qoute_app/presentation/cubit/qoute_cubit/qoute_cubit.dart';
 import 'package:qoute/qoute_app/presentation/widgets/primary_widgets/drawer.dart';
 import 'package:qoute/qoute_app/presentation/widgets/screen_components/quote_display.dart';
 
-import '../../../dependency.dart';
-
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class NotHome extends StatefulWidget {
+  const NotHome({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<NotHome> createState() => _NotHomeState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _NotHomeState extends State<NotHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

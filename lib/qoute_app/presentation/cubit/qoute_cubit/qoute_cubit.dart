@@ -10,6 +10,7 @@ part 'qoute_state.dart';
 
 class QouteCubit extends Cubit<QouteState> {
   final GetQoute _getQoute;
+
   QouteCubit(this._getQoute) : super(QouteInitial());
 
   void getQouteState() async {

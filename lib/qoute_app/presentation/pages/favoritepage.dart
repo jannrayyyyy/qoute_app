@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:qoute/qoute_app/presentation/cubit/favorite_cubit/add_fav_cubit.dart';
 import 'package:qoute/qoute_app/presentation/widgets/primary_widgets/custom_text_widget.dart';
-import 'package:qoute/qoute_app/presentation/widgets/screen_components/favorite_display.dart';
 
 class FavoritePage extends StatefulWidget {
   const FavoritePage({
@@ -35,8 +34,33 @@ class _FavoritePageState extends State<FavoritePage> {
                           color: Colors.grey.withOpacity(0.3),
                           borderRadius: BorderRadius.circular(9),
                         ),
-                        child: FavoriteDisplay(
-                          fav: e,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            QuickSandTextWidget(
+                              text: e.text,
+                              fontsize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            const SizedBox(height: 15),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                QuickSandTextWidget(
+                                  text: e.author,
+                                  fontsize: 15,
+                                  fontWeight: FontWeight.w800,
+                                ),
+                                IconButton(
+                                  onPressed: () {
+                                    context.read<FavCubit>().deleteFav(e.text);
+                                    context.read<FavCubit>().fetchFavorite();
+                                  },
+                                  icon: const Icon(Icons.delete),
+                                )
+                              ],
+                            )
+                          ],
                         ));
                   }).toList(),
                 ),

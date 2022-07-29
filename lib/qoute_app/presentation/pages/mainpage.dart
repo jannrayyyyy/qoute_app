@@ -21,12 +21,12 @@ class MainPage extends StatelessWidget {
           margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
           child: Column(
             children: [
-              const OswaldTextWidget(
+              const QuickSandTextWidget(
                 text: 'Welcome',
                 fontsize: 30,
                 fontWeight: FontWeight.bold,
               ),
-              const CabinSketchTextWidget(
+              const OswaldTextWidget(
                 text: 'Quote App',
                 fontsize: 40,
                 fontWeight: FontWeight.bold,

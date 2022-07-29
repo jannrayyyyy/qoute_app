@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:qoute/qoute_app/domain/usecase/delete_favorite.dart';
 
 import 'package:qoute/qoute_app/presentation/cubit/qoute_cubit/qoute_cubit.dart';
 import 'qoute_app/data/datasource/local_data_source.dart';
@@ -14,13 +15,11 @@ final sl = GetIt.instance;
 
 Future init() async {
   sl.registerFactory(() => QouteCubit(sl()));
-  sl.registerFactory(() => FavCubit(
-        sl(),
-        sl(),
-      ));
+  sl.registerFactory(() => FavCubit(sl(), sl(), sl()));
   sl.registerLazySingleton(() => FetchFavorite(repo: sl()));
   sl.registerLazySingleton(() => AddFavorite(repo: sl()));
   sl.registerLazySingleton(() => GetQoute(sl()));
+  sl.registerLazySingleton(() => DeleteFavorite(repo: sl()));
 
   sl.registerLazySingleton<QouteRepository>(
       () => QouteRepositoryImplementation(sl(), sl()));

@@ -8,4 +8,5 @@ abstract class QouteRepository {
   Future<Either<ServerFailure, List<QouteEntity>>> getQoute();
   Future<void> addFavorite(FavoriteEntity fav);
   Future<List<FavoriteEntity>> fetchFav();
+  Future<void> deleteFavorite(String qoute);
 }

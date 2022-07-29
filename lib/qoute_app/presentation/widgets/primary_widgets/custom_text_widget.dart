@@ -25,30 +25,6 @@ class OswaldTextWidget extends StatelessWidget {
   }
 }
 
-class CabinSketchTextWidget extends StatelessWidget {
-  final String text;
-  final double? fontsize;
-  final FontWeight? fontWeight;
-  final double? maxLine;
-
-  const CabinSketchTextWidget({
-    Key? key,
-    required this.text,
-    this.fontsize,
-    this.fontWeight,
-    this.maxLine,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: GoogleFonts.cabinSketch(
-          textStyle: TextStyle(fontSize: fontsize, fontWeight: fontWeight)),
-    );
-  }
-}
-
 class QuickSandTextWidget extends StatelessWidget {
   final String text;
   final double? fontsize;

@@ -41,4 +41,9 @@ class QouteRepositoryImplementation implements QouteRepository {
       throw CatchedFailure();
     }
   }
+
+  @override
+  Future<void> deleteFavorite(String qoute) async {
+    await local.deleteQoute(qoute);
+  }
 }
