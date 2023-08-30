@@ -17,6 +17,10 @@ class _FavoritePageState extends State<FavoritePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          title: const OswaldTextWidget(
+            text: 'Favorite',
+          ),
+          centerTitle: true,
           backgroundColor: Colors.transparent,
           elevation: 0,
         ),
@@ -37,7 +41,7 @@ class _FavoritePageState extends State<FavoritePage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            QuickSandTextWidget(
+                            OswaldTextWidget(
                               text: e.text,
                               fontsize: 20,
                               fontWeight: FontWeight.bold,
@@ -46,7 +50,7 @@ class _FavoritePageState extends State<FavoritePage> {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                QuickSandTextWidget(
+                                OswaldTextWidget(
                                   text: e.author,
                                   fontsize: 15,
                                   fontWeight: FontWeight.w800,
@@ -67,7 +71,7 @@ class _FavoritePageState extends State<FavoritePage> {
               );
             } else if (state is FavEmpty) {
               return const Center(
-                child: QuickSandTextWidget(
+                child: OswaldTextWidget(
                   text: 'Empty',
                   fontsize: 30,
                 ),

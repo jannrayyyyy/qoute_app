@@ -22,20 +22,26 @@ class _QuoteDisplayWidgetState extends State<QuoteDisplayWidget> {
       margin: const EdgeInsets.all(3),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          QuickSandTextWidget(
-            text: widget.qoute.text,
-            fontsize: 30,
-            fontWeight: FontWeight.bold,
+          SizedBox(
+            height: 250,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                OswaldTextWidget(
+                  text: widget.qoute.text,
+                  fontsize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
+                const SizedBox(height: 20),
+                OswaldTextWidget(
+                  text: '-${widget.qoute.author}',
+                  fontsize: 20,
+                  fontWeight: FontWeight.w600,
+                ),
+              ],
+            ),
           ),
-          const SizedBox(height: 20),
-          QuickSandTextWidget(
-            text: widget.qoute.author,
-            fontsize: 20,
-            fontWeight: FontWeight.w600,
-          ),
-          const SizedBox(height: 200),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -65,9 +71,3 @@ class _QuoteDisplayWidgetState extends State<QuoteDisplayWidget> {
     );
   }
 }
-
-  //  BlocProvider<FavCubit>(
-  //                   create: (context) => sl<FavCubit>()..addFavorite(fav),
-  //                 );
-
-  // context.read<FavCubit>().addFavorite(favorite);
